@@ -11,6 +11,10 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "username", "age"})
+@NamedQuery(
+        name = "Member.findByUsername",
+        query = "select m from Member m where m.usernameError나는부분 = :username"
+)
 public class Member {
 
     @Id
